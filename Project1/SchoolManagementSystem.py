@@ -49,7 +49,7 @@ class Function:
 
     def adduser(self):
         try:
-            type_user = int(input("1. Add student:\n2. Add staff:\n"))
+            type_user = int(input("1. Add student:\n2. Add staff:"))
             if type_user not in [1, 2]:
                 print("Invalid selection. Please choose 1 or 2.")
                 return
@@ -114,6 +114,8 @@ class Function:
                 for user in list_of_User if user.user_type == "Staff"
             ]
             print(tabulate(user_data, headers="keys", tablefmt=" pretty"))
+        else:
+            print("Enter valid option")
 
     def viewcourse(self):
         course_data = [
@@ -173,18 +175,18 @@ class Function:
                                f"7. Exit Program: "))
         
             if choice == 1:
-                print("Adding User..")
+                print("                   ..Adding User..")
                 self.adduser()
             
             elif choice == 2:
-                print("Adding Course:")
+                print("                   ..Adding Course..")
                 self.addcourse()
             elif choice == 3:
                 self.viewuser()
             elif choice == 4:
                 self.viewcourse()
             elif choice ==5:
-                i=input("Enter Student Id:")
+                i=input("Enter User Id:")
                 self.searchuser(i)
             elif choice==6:
                  self.assigncourse()
